@@ -134,7 +134,7 @@ call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_blue})
 call s:h("ErrorMsg",      {"fg": s:pink})
 call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:bg_subtle, "fg": s:norm})
+call s:h("Search",        {"bg": s:dark_yellow, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
@@ -162,14 +162,14 @@ if has("gui_running")
   call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
   call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
 else
-  call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
-  call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
-  call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
+  call s:h("SpellBad",    {"gui":"underline","cterm": "underline", "fg": s:red})
+  call s:h("SpellCap",    {"gui":"underline","cterm": "underline", "fg": s:light_green})
+  call s:h("SpellRare",   {"gui":"underline","cterm": "underline", "fg": s:pink})
+  call s:h("SpellLocal",  {"gui":"underline","cterm": "underline", "fg": s:dark_green})
 endif
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:blue})
+call s:h("PmenuSel",      {"fg": s:norm, "bg": s:dark_blue})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
@@ -196,7 +196,7 @@ hi link diffAdded         DiffAdd
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
 hi link SignifySignChange           LineNr
-hi link GitGutterAdd                LineNr
-hi link GitGutterDelete             LineNr
-hi link GitGutterChange             LineNr
-hi link GitGutterChangeDelete       LineNr
+hi link GitGutterAdd                DiffAdd
+hi link GitGutterDelete             DiffDelete
+hi link GitGutterChange             DiffChange
+hi link GitGutterChangeDelete       DiffText
