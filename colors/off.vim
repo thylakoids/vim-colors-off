@@ -91,12 +91,13 @@ hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h("Identifier",    {"fg": s:dark_blue})
-hi! link Identifier       Normal
+" call s:h("Identifier",    {"fg": s:dark_blue})
+call s:h("Identifier",    {"fg": s:norm})
+" hi! link Identifier       Normal
 hi! link Function         Identifier
 
-"call s:h("Statement",     {"fg": s:green})
-hi! link Statement        Normal
+call s:h("Statement",     {"fg": s:green})
+" hi! link Statement        Normal
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -193,9 +194,9 @@ hi link diffRemoved       DiffDelete
 hi link diffAdded         DiffAdd
 
 " Signify, git-gutter
-hi link SignifySignAdd              LineNr
-hi link SignifySignDelete           LineNr
-hi link SignifySignChange           LineNr
+hi link SignifySignAdd              DiffAdd
+hi link SignifySignDelete           DiffDelete
+hi link SignifySignChange           DiffChange
 hi link GitGutterAdd                DiffAdd
 hi link GitGutterDelete             DiffDelete
 hi link GitGutterChange             DiffChange
