@@ -42,6 +42,8 @@ let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
 let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
+let s:lighter_green   = { "gui": "#A1C281", "cterm": "11"  }
+let s:darker_green    = { "gui": "#6D815F", "cterm": "11"  }
 
 if &background == "dark"
   let s:bg              = s:black
@@ -79,7 +81,7 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
+call s:h("Normal",        {"fg": s:norm})
 call s:h("Cursor",        {"bg": s:blue, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
@@ -92,8 +94,8 @@ hi! link Float            Constant
 hi! link String           Constant
 
 " call s:h("Identifier",    {"fg": s:dark_blue})
-call s:h("Identifier",    {"fg": s:norm})
-" hi! link Identifier       Normal
+" call s:h("Identifier",    {"fg": s:norm})
+hi! link Identifier       Normal
 hi! link Function         Identifier
 
 call s:h("Statement",     {"fg": s:green})
@@ -178,7 +180,7 @@ call s:h("TabLineSel",    {"fg": s:blue, "bg": s:bg_subtle, "gui": "bold", "cter
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("ColorColumn",   {"bg": s:bg_subtle})
+call s:h("ColorColumn",   {"bg": s:darker_green})
 
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
