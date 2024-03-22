@@ -1,7 +1,5 @@
 # vim-colors-off
 
-*This is very much a work in progress*
-
 For a number of weeks, I ran vim with `syntax off`. It was quite nice, 
 with only two annoyances:
 
@@ -23,14 +21,10 @@ surprising because it's a very colorful colorscheme, but:
 
 ![Screenshot](shot.png)
 
-Slightly out of date, not super exciting...
-
 ## Installation
 
-- Use [Vundle][]
+- Use your preferred plugin manager
 - Add "pbrisbin/vim-colors-off" as a plugin
-
-[vundle]: https://github.com/gmarik/Vundle.vim
 
 ## Usage
 
@@ -39,3 +33,17 @@ Slightly out of date, not super exciting...
 ```
 
 Supports both `background=light` and `background=dark`.
+
+## Options
+
+- `g:colors_off_a_little`: Set to `1` to bring back _a little_ color, here and there. Default `0`.
+
+## Trouble-shooting
+
+**Plugin fails to update**: we recently switched our default branch; this can confuse
+some existing checkouts. The solution is to remove and re-add the plugin. How do to that
+depends on the plugin manager you use.
+
+---
+
+[LICENSE](./LICENSE)
